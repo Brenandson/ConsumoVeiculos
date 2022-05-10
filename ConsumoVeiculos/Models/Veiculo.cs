@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConsumoVeiculos.Models
@@ -12,5 +13,7 @@ namespace ConsumoVeiculos.Models
         public string Nome { get; set; }
         [Required(ErrorMessage = "Obrigatório informar a placa!")]
         public string Placa { get; set; }
+
+        public ICollection<Consumo> Consumos { get; set; }
     }
 }
